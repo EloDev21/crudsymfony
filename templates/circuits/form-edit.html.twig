@@ -1,0 +1,70 @@
+{% block titre %}{% endblock %}
+{% block css %}
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="{{ asset('assets/css/nav.css') }}">
+
+{% endblock %}
+{% block contenu %}
+<main>
+
+	<div class="container mt-5 align-center">
+		<h1>Formulaire de modification d'une annonce - Le Super Coin</h1>
+
+		{{form_start(formCircuit)}}
+		<div class="row">
+
+			<div class="col">
+				{{form_label(formCircuit.title, 'Titre du circuit')}}
+
+				<div class="col">
+					{{form_widget(formCircuit.title)}}
+				</div>
+			</div><br><br>
+			<div class="row">
+
+				<div class="col">
+					{{form_label(formCircuit.description,'Description du circuit ')}}
+
+					<div class="col">
+						{{form_widget(formCircuit.description)}}
+					</div>
+					<div class="row">
+
+						<div class="col">
+							{{form_label(formCircuit.minidesc,'Mini description du circuit')}}
+
+							<div class="col">
+								{{form_widget(formCircuit.minidesc)}}
+							</div>
+							<div class="row">
+
+								<div class="col">
+									{{form_label(formCircuit.price,'Prix du circuit')}}
+
+									<div class="col">
+										{{form_widget(formCircuit.price)}}
+									</div>
+
+
+								</div>
+							<div class="row">
+
+								<div class="col">
+									{{form_label(formCircuit.photo,'Photo du circuit ')}}
+
+									<div class="col">
+										{{form_widget(formCircuit.photo)}}
+									</div>
+
+
+								</div>
+								<input type="submit" class="btn-btn-primary value=" Modifier et sauvegarder">
+								{{form_end(formCircuit)}}
+
+							</div>
+                        </main>
+						{% endblock %}
+				

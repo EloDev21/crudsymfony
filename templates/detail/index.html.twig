@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}Hello DetailController!{% endblock %}
+{% block css %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+<link rel="stylesheet" href="{{ asset('assets/css/nav.css') }}">
+{% endblock %}
+{% block contenu %}
+<div class="page" style='display:flex;justify-content:space-around'>
+{% for detail in details %}
+
+        <div class="col-md-5 xs-8">
+        <div class="card" style="width: 25rem; ">
+    <h3 class="card-title">{{detail.title}}</h3>
+            <img src="{{detail.photo}}" class="card-img-top" alt="imageCircuit" style="height:300px; width:25rem" >
+            <div class="card-body">
+                <p class="card-text">{{detail.price}}</p>
+                <a href="#" ><button >Ajouter au panier<i class="fas fa-home navbar-icon"></i> </button</a>
+                {% endfor %}
+{% endblock %}

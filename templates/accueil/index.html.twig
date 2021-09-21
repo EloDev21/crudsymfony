@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}SeneSafari - Circuits{% endblock %}
+{% block css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
+
+<link rel="stylesheet" href="{{ asset('assets/css/accueil.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/nav.css') }}">
+{% endblock %}
+
+{% block contenu %}
+<main>
+{% if is_granted('ROLE_ADMIN') %}
+
+
+  {% if app.user %}
+<span style="color:blue">Bonjour  et bienvenue  {{app.user.name|upper}}, Administrateur du site. Ravi de vous compter parmi nos membres.</span>
+{% endif %}
+{% endif %} 
+{# <div class="warning"> #}
+<div class="container-fluid mt-3" id="bandeau_accueil">
+<h1 class="text-center">SENE'Safari</h1>
+
+<h3 class="text-center">Réservez votre safari et évadez vous dans une endroit idylique</h3>
+    <p>Beware of the Gaindé Ndiaye</p>
+    <p>    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, facere cupiditate laborum quis accusantium maxime vero qui nisi maiores expedita quibusdam eaque fugit facilis esse odit assumenda laboriosam minima ut ratione asperiores, error quisquam sit. Distinctio sequi quasi exercitationem quae.</p>
+</div>
+<div class="container mt-5 mb-2" id="bandeau_carousel">
+<h1 class="text-center">Carousel circuits et hébergements </h1>
+</div>
+
+<h3 class="text-center">Réservez votre safari et évadez vous dans une endroit idylique</h3>
+    <p>Beware of the Gaindé Ndiaye</p>
+
+
+
+{% endblock %}
