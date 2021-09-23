@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CircuitsRepository;
 use Doctrine\ORM\Mapping as ORM;
-
+use Cocur\Slugify\Slugify;
 /**
  * @ORM\Entity(repositoryClass=CircuitsRepository::class)
  */
@@ -67,6 +67,11 @@ class Circuits
         $this->title = $title;
 
         return $this;
+    }
+    public function getSlug():string
+    {
+        // return (new Slugify())-> slugify->slugify($this->title); *
+        return (new Slugify())->slugify($this->title);
     }
 
     public function getMinidesc(): ?string

@@ -22,7 +22,19 @@ class CircuitsController extends AbstractController
             'allCircuits' => $circuits
         ]);
     }
-        /**
+
+    /**
+     * @Route("/circuits/{slug}-{id}", name="circuits.detail", requirements={"slug": "[a-z0-9\-]*"})
+     */
+    public function detail($slug,$id): Response
+    {
+        $circuit = $this->getDoctrine()->getRepository(Circuits::class)->find($id);
+        return $this->render('circuits/detail.html.twig', [
+            'circuit' =>$circuit,
+            'allCircuits' => 'circuits'
+        ]);
+    }
+    /**
      * @Route("/circuits/add", name="circuits_add")
      */
     public function add(Request $request)
