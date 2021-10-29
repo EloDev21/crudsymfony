@@ -30,7 +30,9 @@ class RegistrationController extends AbstractController
                 )
             );
             $user->setCreatedAt(new \DateTime());
-            $user->setRoles(['ROLE_USER','ROLE_CUSTOMER','ROLE_ADMIN']);
+
+            // a linscription on aura plus un role user mais coustomer par defaut
+            $user->setRoles(['ROLE_CUSTOMER']);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);

@@ -37,5 +37,8 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/circuits, roles: IS_AUTHENTICATED_FULLY }
-        #   - { path: ^/circuits, roles: 'ROLE_USER','ROLE_ADMIN',ROLE_CUSTOMER }
-        # - { path: ^/panier, roles: ROLE_ADMIN,ROLE_CUSTOMER,IS_AUTHENTICATED_FULLY }
+        #    - { path: ^/circuits, roles: 'ROLE_USER' }
+           - { path: ^/panier, roles: 'IS_AUTHENTICATED_FULLY,ROLE_ADMIN,ROLE_CUSTOMER' }
+           - { path: ^/logout, roles: 'IS_AUTHENTICATED_FULLY,ROLE_ADMIN,ROLE_CUSTOMER' }
+       #    - { path: ^/circuits/*, roles: 'ROLE_ADMIN' }
+        #    - { path: ^/panier, roles: ROLE_ADMIN,ROLE_CUSTOMER,IS_AUTHENTICATED_FULLY }

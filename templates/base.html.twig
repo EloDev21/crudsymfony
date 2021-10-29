@@ -32,8 +32,8 @@
 			<label for="click" class="menu-btn">
 				<i class="fas fa-bars"></i>
 			</label>
-			<ul>
-				<li>
+			<ul style="z-index:7">
+				<li style="z-index:7">
 					<a href="{{path('accueil')}}">
 						<i class="fas fa-home navbar-icon"></i>
 						ACCUEIL</a>
@@ -65,13 +65,15 @@
 							Panier</a>
 					</li>
 				{% endif %}
-				{% if is_granted('ROLE_ADMIN','ROLE_CUSTOMER') %}
+				{% if is_granted('ROLE_ADMIN','ROLE_CUSTOMER')%}
+			
 					<li>
 						<a href="{{path('app_logout')}}" class="active" type="btn btn-danger" class="btn btn-danger">
 							<i class="fas fa-sign-out-alt navbar-icon"></i>
 							LogOut</a>
 					</li>
 				{% endif %}
+			
 			</ul>
 		</nav>
 

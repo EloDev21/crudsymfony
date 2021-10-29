@@ -29,32 +29,11 @@
 
 		<div class="row">
 			{% for circuit in allCircuits %}
-			{# <div class="container mt-4">
-			<div class="row " style="display:flex;justify-content:space-between">
-				<div class="col-6">
-					<div class="card">
-						<div class="card-body">
-						
-						<div class="card-img">
-						<img src ="{{circuit.photo}}" style="width:100%; height:100%">
-						
-	</div>
-						
-							<h5 class="card-title">
-								{{circuit.title}}
-							</h5>
-							<p class="card-text">{{circuit.minidesc}}</p>
-							<div class="text-primary">{{circuit.price}}</div>
-						</div>
-					</div>
-				</div>
-					</div>
-				</div>
-					 #}
+		
 			
 				<div class="col-md-6 xs-8" style="display:flex;justify-content:space-between">
 					<div class="card" style="width: 25rem; margin:15px">
-						<img src="{{circuit.photo}}" class="card-img-top" alt="imageCircuit" style="height:300px; width:25rem">
+						<img src="{{circuit.photo}}" class="card-img-top" alt="imageCircuit" id="imgCircuit" style="height:300px; width:25rem">
 						<div class="card-body" style="background-color:wheat">
 							<h3 class="card-title text-center" >
 								<a href="{{ path('circuits.detail', {id:circuit.id, slug: circuit.slug}) }} " style="color:green;font-weight:bold;">
@@ -69,10 +48,9 @@
 							{# bouton editer et supprimer #}
 							 {% if is_granted('ROLE_ADMIN') %}
 
-
 								<a href="{{ path('circuits_edit', {id:circuit.id})}}" class="btn btn-warning">
 									Modifier Circuit</a>&nbsp;&nbsp;
-								<a href="{{path('circuits_delete', {id:circuit.id})}}" onclick="return confirm('Etes vous sûr de vouloir supprimer le circuit? Cette action est irreversible!');" class="btn btn-danger">Supprimer Circuit</a>
+								<a href="{{path('circuits_delete', {id:circuit.id})}}" onclick="return confirm('Etes vous sûr de vouloir supprimer le circuit {{app.user.name|upper}}? Cette action est irreversible!');" class="btn btn-danger">Supprimer Circuit</a>
 							{% endif %}
 						</div>
 					</div><br><br>
