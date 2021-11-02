@@ -5,8 +5,8 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.2.5",
-        "ext-ctype": "*",
-        "ext-iconv": "*",
+            "ext-ctype": "*",
+            "ext-iconv": "*",
         "cocur/slugify": "^4.0",
         "composer/package-versions-deprecated": "1.11.99.4",
         "doctrine/annotations": "^1.0",
@@ -46,7 +46,7 @@
         "twig/twig": "^2.12|^3.0",
         "vich/uploader-bundle": "^1.18"
     },
-    "require-dev": {
+    "require": {
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "5.3.*",
         "symfony/css-selector": "5.3.*",
