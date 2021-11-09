@@ -31,6 +31,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $roles = ['ROLE_ADMIN','ROLE_CUSTOMER',];
 
+    // ajout du super_admin !!!!!!!!!!!!!
+
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")

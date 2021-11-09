@@ -11,15 +11,16 @@
 		{% block css %}
 
 			{# bootstrap5 css #}
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+	
 
 			<link rel="stylesheet" href="{{ asset('assets/css/nav.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 
 		{% endblock %}
 
 		{% block js %}{% endblock %}
 	</head>
-	<body style="background: linear-gradient(75deg, #ffcb69,#fb8b24, #78290f),linear-gradient(142deg, transparent, white),linear-gradient(108deg, red, transparent);
+	<body style="background: linear-gradient(75deg, wheat,goldenrod, #78290f),linear-gradient(142deg, transparent, white),linear-gradient(108deg, red, transparent);
 	min-height: 100%;">
 		<nav>
 			<div class="logo">
@@ -60,7 +61,7 @@
 				</li>
 				{% if is_granted('ROLE_ADMIN','ROLE_CUSTOMER') %}
 					<li>
-						<a href="" class="panier" type="btn btn-info">
+						<a href="{{ path('cart_index') }}" class="panier" type="btn btn-info">
 							<i class="fas fa-shopping-basket navbar-icon"></i>
 							Panier</a>
 					</li>

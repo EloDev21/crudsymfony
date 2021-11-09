@@ -9,7 +9,7 @@ nav{
   display: flex;
   height: 80px;
   width: 100%;
-  background: linear-gradient(to left,#ffba08, #78290f 12%),linear-gradient(142deg, transparent, white),linear-gradient(108deg, yellow, transparent);
+  background: linear-gradient(to left,#ffba08, #B0781A 12%),linear-gradient(142deg, transparent, white),linear-gradient(108deg, yellow, transparent);
 	min-height: 100%;
   align-items: center;
   justify-content: space-between;

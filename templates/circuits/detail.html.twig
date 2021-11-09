@@ -22,7 +22,7 @@
 				<h1 class="text-center" style="color:wheat">{{circuit.title}}</h1>
 				<p>{{circuit.description |nl2br}}</p>
 				<div class="text-primary" style="font-size: 4rem;font-weight:bold; ">{{circuit.price}}€
-                        &nbsp;&nbsp;<a href={{ path('cart_index') }} class="btn btn-warning">Ajouter au panier</a>
+                        &nbsp;&nbsp;<a href="{{ path('cart_add', {id:circuit.id}) }}" class="btn btn-warning">Ajouter au panier</a>
 			</div>
                         </div>
 
